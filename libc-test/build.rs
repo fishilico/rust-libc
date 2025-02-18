@@ -2024,6 +2024,9 @@ fn test_android(target: &str) {
             | "PF_BLOCK_TS"
             | "PF_SUSPEND_TASK" => true,
 
+            // FIXME(linux): Requires >= 6.12 kernel headers.
+            "SOF_TIMESTAMPING_OPT_RX_FILTER" => true,
+
             _ => false,
         }
     });
@@ -4262,6 +4265,9 @@ fn test_linux(target: &str) {
 
             // FIXME(linux): Requires >= 6.11 kernel headers.
             "MAP_DROPPABLE" => true,
+
+            // FIXME(linux): Requires >= 6.12 kernel headers.
+            "SOF_TIMESTAMPING_OPT_RX_FILTER" => true,
 
             _ => false,
         }
